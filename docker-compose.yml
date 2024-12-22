@@ -78,9 +78,12 @@ services:
     container_name: ${WORKER_CONTAINER_NAME:-api-worker}
     command: php /var/www/html/artisan queue:work --sleep=3 --tries=3 --queue=high,default,emails,low
     depends_on:
+      - db
       - redis
     volumes:
       - ../emr-php:/var/www/html # Mount local PHP code to the container for dev only
+    networks:
+      - app-network
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

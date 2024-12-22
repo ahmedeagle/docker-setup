@@ -28,9 +28,11 @@ RUN composer install --optimize-autoloader --no-interaction --no-scripts
 
 COPY ./emr-php /var/www/html
 
+
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
-
+# Ensure PHP-FPM runs as www-data and not root
+USER www-data
 # Expose the port that PHP-FPM will listen on
 EXPOSE 9000
