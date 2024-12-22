@@ -77,7 +77,7 @@ docker exec -it api php artisan migrate
 
 ```plaintext
 .
-
+WorkSpace Directory 
 ├── docker-setup              # Custom Docker setup files
 │   ├── php                   # PHP-specific configurations
 │   │   ├── Dockerfile        # PHP Dockerfile
@@ -87,7 +87,7 @@ docker exec -it api php artisan migrate
 │   │   └── my.cnf            # Custom MySQL configurations
 │   └── nginx                 # Nginx setup
 │   │   └── api.conf          # Nginx virtual host configuration
-    ├── docker-compose.yml        # Defines services and configurations
+│   ├── docker-compose.yml        # Defines services and configurations
 ├── emr-php                   # any Laravel application code (mounted as a volume)
 └── README.md                 # Documentation (this file)
 ```
