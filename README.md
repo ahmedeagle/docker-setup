@@ -47,19 +47,6 @@ Run the following command to build and start the services:
 docker-compose up --build
 ```
 
-### 4. Install Laravel Dependencies
-After the containers are running, install Laravel dependencies using the `api` container:
-```bash
-docker exec -it api composer install
-```
-
-### 5. Run Laravel Migrations
-Run the database migrations to set up the database schema:
-```bash
-docker exec -it api php artisan migrate
-```
-
----
 
 ## Services and Ports
 
